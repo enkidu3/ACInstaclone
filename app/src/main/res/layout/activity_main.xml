@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
+    android:onClick="rootLayoutTapped"
     tools:context=".MainActivity">
 
     <ImageView
@@ -77,9 +78,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:autoText="false"
         android:ems="10"
         android:hint="Please Enter a User Name"
-        android:inputType="textPersonName"
+        android:onClick="rootLayoutTapped"
         app:layout_constraintBottom_toTopOf="@+id/edtPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
