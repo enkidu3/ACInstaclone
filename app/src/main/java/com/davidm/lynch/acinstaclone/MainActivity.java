@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         if(ParseUser.getCurrentUser() != null){
-            ParseUser.getCurrentUser().logOut();
+           // ParseUser.getCurrentUser().logOut();
+            transitionToSocialMediaActivity();
         }
 
     }
@@ -99,6 +100,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void done(ParseException e) {
                         if(e == null){
                             Toast.makeText(MainActivity.this,  "Welcome, " + username + ".  You are now signed in", Toast.LENGTH_LONG).show();
+                            progressDialog.dismiss();
+                            transitionToSocialMediaActivity();
                         }else{
                             Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                         }
@@ -117,5 +120,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
+    }
+    private void transitionToSocialMediaActivity(){
+        Intent intent = new Intent(MainActivity.this, SocialMediaActivity.class);
+        startActivity(intent);
     }
 }

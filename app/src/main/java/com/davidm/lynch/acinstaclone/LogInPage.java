@@ -3,6 +3,7 @@ package com.davidm.lynch.acinstaclone;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -53,7 +54,8 @@ public class LogInPage extends AppCompatActivity implements View.OnClickListener
 
 
         if(ParseUser.getCurrentUser() != null){
-            ParseUser.getCurrentUser().logOut();
+          //  ParseUser.getCurrentUser().logOut();
+            transitionToSocialMediaActivity();
         }
 
     }
@@ -93,6 +95,8 @@ public class LogInPage extends AppCompatActivity implements View.OnClickListener
                                 Toast.makeText(LogInPage.this, e.getMessage(), Toast.LENGTH_LONG).show();
                             }else{
                                 Toast.makeText(LogInPage.this, username+ " is logged in.", Toast.LENGTH_LONG).show();
+                                progressDialog.dismiss();
+                                transitionToSocialMediaActivity();
                             }
 
                         }
@@ -112,5 +116,9 @@ public class LogInPage extends AppCompatActivity implements View.OnClickListener
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+    private void transitionToSocialMediaActivity(){
+        Intent intent = new Intent(LogInPage.this, SocialMediaActivity.class);
+        startActivity(intent);
     }
 }
