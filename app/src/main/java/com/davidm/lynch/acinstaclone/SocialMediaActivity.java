@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 
 public class SocialMediaActivity extends AppCompatActivity {
@@ -18,6 +19,8 @@ public class SocialMediaActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private TabAdapter tabAdapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
