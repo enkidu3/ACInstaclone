@@ -28,8 +28,8 @@ public class SocialMediaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_social_media);
 
         setTitle("Social Media App!!");
-        toolbar =findViewById(R.id.myToolbar);
-        setSupportActionBar(toolbar);
+//        toolbar =findViewById(R.id.myToolbar);
+//        setSupportActionBar(toolbar);
 
         viewPager=findViewById(R.id.viewPager);
         tabAdapter = new TabAdapter(getSupportFragmentManager());
